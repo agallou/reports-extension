@@ -26,6 +26,11 @@ if ($vendorDir === null)
 }
 
 $filesystemDir = $vendorDir . DIRECTORY_SEPARATOR . 'symfony' . DIRECTORY_SEPARATOR . 'filesystem';
+if (is_dir($filesystemDir) === false)
+{
+	$filesystemDir = $vendorDir . DIRECTORY_SEPARATOR . 'symfony' . DIRECTORY_SEPARATOR . 'symfony' . DIRECTORY_SEPARATOR . 'src';
+}
+
 $filesystemSuffix = 'Symfony' . DIRECTORY_SEPARATOR . 'Component' . DIRECTORY_SEPARATOR . 'Filesystem';
 if (is_dir($filesystemDir . DIRECTORY_SEPARATOR . $filesystemSuffix) === true)
 {
